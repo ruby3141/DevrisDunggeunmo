@@ -5,91 +5,46 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     defp scripts, do: %{"DFLT" => [:default], "latn" => [:default]}
   end
 
-  lookup :chained_context, "Short bidirectional arrow chain" do
+  lookup :chained_context, "Left arrow head" do
     feature "calt", scripts()
 
     context do
       backtrack '<'
-      input '-=', apply: "Short bidirectional arrow body"
-      lookahead '>'
-    end
-  end
-
-  lookup :chained_context, "Left arrow head chain" do
-    feature "calt", scripts()
-
-    context do
-      backtrack '<'
-      input '-', apply: "Left arrow head"
+      input '-', apply: "Arrow body"
     end
 
     context do
       backtrack '<'
-      input '=', apply: "Left arrow head"
+      input '=', apply: "Arrow body"
       lookahead '-='
     end
   end
 
-  lookup :chained_context, "Right arrow head chain" do
+  lookup :chained_context, "Left arrow body" do
     feature "calt", scripts()
 
     context do
-      backtrack ~w(hyphen.larr.head equal.larr.head)
-      backtrack '<'
-      input '-=', apply: "Right arrow head alt"
-      lookahead '>'
-    end
-
-    context do
-      input '-=', apply: "Right arrow head"
-      lookahead '>'
+      backtrack ~w(hyphen.arrow equal.arrow)
+      input '-=', apply: "Arrow body"
     end
   end
 
-  lookup :chained_context, "Left arrow body chain" do
+  lookup :chained_context, "Right arrow head" do
     feature "calt", scripts()
 
     context do
-      backtrack ~w(hyphen.larr.head equal.larr.head)
-      backtrack '<'
-      input '-=', apply: "Left arrow body"
-      lookahead '-='
-    end
-
-    context do
-      backtrack ~w(hyphen.larr.body equal.larr.body)
-      input '-=', apply: "Left arrow body"
-      lookahead '-='
+      input '-=', apply: "Arrow body"
+      input '>', apply: "Right arrow head"
     end
   end
 
-  lookup :chained_context, "Bidirectional arrow joiner chain" do
+  lookup :reverse_chaining_context, "Right arrow body" do
     feature "calt", scripts()
 
     context do
-      backtrack ~w(hyphen.larr.head hyphen.larr.body equal.larr.head equal.larr.body)
-      input '-=', apply: "Bidirectional arrow joiner"
-      lookahead ~w(hyphen.rarr.head equal.rarr.head)
-      lookahead '>'
-    end
-  end
-
-  lookup :chained_context, "Left arrow tail chain" do
-    feature "calt", scripts()
-
-    context do
-      backtrack ~w(hyphen.larr.head hyphen.larr.body equal.larr.head equal.larr.body)
-      input '-=', apply: "Left arrow body"
-    end
-  end
-
-  lookup :reverse_chaining_context, "Right arrow body chain" do
-    feature "calt", scripts()
-
-    context do
-      lookahead ~w(hyphen.rarr.head hyphen.rarr.body equal.rarr.head equal.rarr.body)
-      substitute ?-, "hyphen.rarr.body"
-      substitute ?=, "equal.rarr.body"
+      lookahead ~w(hyphen.arrow equal.arrow)
+      substitute ?-, "hyphen.arrow"
+      substitute ?=, "equal.arrow"
     end
   end
 
