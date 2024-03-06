@@ -1,4 +1,4 @@
-# Devris둥근모
+# DevrisDunggeunmo
 
 LANG: EN / [KO](README.md)
 
