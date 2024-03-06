@@ -38,16 +38,6 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     end
   end
 
-  lookup :reverse_chaining_context, "Right arrow body" do
-    feature "calt", scripts()
-
-    context do
-      lookahead ~w(hyphen.arrow equal.arrow)
-      substitute ?-, "hyphen.arrow"
-      substitute ?=, "equal.arrow"
-    end
-  end
-
   lookup :chained_context, "Markup comment chain" do
     feature "calt", scripts()
 
@@ -56,6 +46,16 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
       input '!', apply: "Markup comment exclam"
       input '-', apply: "Markup comment hyphen body"
       input '-', apply: "Markup comment hyphen tail"
+    end
+  end
+
+  lookup :reverse_chaining_context, "Right arrow body" do
+    feature "calt", scripts()
+
+    context do
+      lookahead ~w(hyphen.arrow equal.arrow)
+      substitute ?-, "hyphen.arrow"
+      substitute ?=, "equal.arrow"
     end
   end
 
