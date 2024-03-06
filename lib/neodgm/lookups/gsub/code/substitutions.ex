@@ -56,6 +56,18 @@ lookups NeoDGM.Lookups.GSUB.Code.Substitutions, for: "GSUB" do
     end
   end
 
+  lookup :single_substitution, "Markup comment hyphen body" do
+    substitutions do
+      substitute ?-, "hyphen.markupcomment.body"
+    end
+  end
+
+  lookup :single_substitution, "Markup comment hyphen tail" do
+    substitutions do
+      substitute ?-, "hyphen.markupcomment.tail"
+    end
+  end
+
   lookup :single_substitution, "Pipe operator" do
     substitutions do
       substitute ?<, "less.pipeoperator"

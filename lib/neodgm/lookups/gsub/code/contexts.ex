@@ -99,8 +99,8 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     context do
       backtrack '<'
       input '!', apply: "Markup comment exclam"
-      input '-', apply: "Left arrow body"
-      input '-', apply: "Left arrow body"
+      input '-', apply: "Markup comment hyphen body"
+      input '-', apply: "Markup comment hyphen tail"
     end
   end
 
