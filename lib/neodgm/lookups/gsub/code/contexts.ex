@@ -34,7 +34,7 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
 
     context do
       input '-=', apply: "Arrow body"
-      input '>', apply: "Right arrow head"
+      input '>', apply: "Greater as arrow head"
     end
   end
 
