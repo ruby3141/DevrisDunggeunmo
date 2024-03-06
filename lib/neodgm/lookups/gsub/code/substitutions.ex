@@ -8,9 +8,9 @@ lookups NeoDGM.Lookups.GSUB.Code.Substitutions, for: "GSUB" do
     end
   end
 
-  lookup :single_substitution, "Greater as arrow head" do
+  lookup :single_substitution, "Greater, 1px backward" do
     substitutions do
-      substitute ?>, "greater.arrow"
+      substitute ?>, "greater.left1px"
     end
   end
 

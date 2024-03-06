@@ -34,7 +34,16 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
 
     context do
       input '-=', apply: "Arrow body"
-      input '>', apply: "Greater as arrow head"
+      input '>', apply: "Greater, 1px backward"
+    end
+  end
+
+  lookup :chained_context, "Greater sequence start with right arrow head" do
+    feature "calt", scripts()
+
+    context do
+      backtrack ~w(greater.left1px)
+      input '>', apply: "Greater, 1px backward"
     end
   end
 

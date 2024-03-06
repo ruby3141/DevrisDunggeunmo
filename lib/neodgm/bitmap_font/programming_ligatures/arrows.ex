@@ -21,7 +21,7 @@ glyph_source NeoDGM.BitmapFont.ProgrammingLigatures.Arrows do
     """
   end
 
-  bmp_glyph "greater.arrow" do
+  bmp_glyph "greater.left1px" do
     advance 8
     bounds 0..6, 0..9
 
