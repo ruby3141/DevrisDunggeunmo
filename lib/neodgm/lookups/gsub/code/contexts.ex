@@ -5,6 +5,17 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     defp scripts, do: %{"DFLT" => [:default], "latn" => [:default]}
   end
 
+  lookup :chained_context, "Markup comment chain" do
+    feature "calt", scripts()
+
+    context do
+      backtrack '<'
+      input '!', apply: "Markup comment exclam"
+      input '-', apply: "Markup comment hyphen body"
+      input '-', apply: "Markup comment hyphen tail"
+    end
+  end
+
   lookup :chained_context, "Left arrow head" do
     feature "calt", scripts()
 
@@ -49,17 +60,6 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     context do
       backtrack ~w(greater.left1px)
       input '>', apply: "Greater, 1px backward"
-    end
-  end
-
-  lookup :chained_context, "Markup comment chain" do
-    feature "calt", scripts()
-
-    context do
-      backtrack '<'
-      input '!', apply: "Markup comment exclam"
-      input '-', apply: "Markup comment hyphen body"
-      input '-', apply: "Markup comment hyphen tail"
     end
   end
 
