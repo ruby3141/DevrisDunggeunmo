@@ -18,16 +18,7 @@ glyph_source NeoDGM.BitmapFont.ProgrammingLigatures.Markup do
     """
   end
 
-  bmp_glyph "hyphen.markupcomment.body" do
-    advance 8
-    bounds -4..5, 4..5
-
-    data """
-    111111111
-    """
-  end
-
-  bmp_glyph "hyphen.markupcomment.tail" do
+  bmp_glyph "hyphen.markupcomment" do
     advance 8
     bounds -2..7, 4..5
 
