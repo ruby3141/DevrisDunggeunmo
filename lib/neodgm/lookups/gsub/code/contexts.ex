@@ -16,6 +16,25 @@ lookups NeoDGM.Lookups.GSUB.Code.Contexts, for: "GSUB" do
     end
   end
 
+  lookup :chained_context, "Markup tag chain" do
+    feature "calt", scripts()
+
+    context do
+      input '<', apply: "Markup tag"
+      input '/', apply: "Markup tag"
+    end
+
+    context do
+      input '/', apply: "Markup tag"
+      input '>', apply: "Markup tag"
+    end
+
+    context do
+      backtrack ~w(slash.markuptag)
+      input '>', apply: "Markup tag"
+    end
+  end
+
   lookup :chained_context, "Left arrow head" do
     feature "calt", scripts()
 

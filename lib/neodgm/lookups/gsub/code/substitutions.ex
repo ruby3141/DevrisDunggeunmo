@@ -21,6 +21,14 @@ lookups NeoDGM.Lookups.GSUB.Code.Substitutions, for: "GSUB" do
     end
   end
 
+  lookup :single_substitution, "Markup tag" do
+    substitutions do
+      substitute ?<, "less.markuptag"
+      substitute ?/, "slash.markuptag"
+      substitute ?>, "greater.markuptag"
+    end
+  end
+
   lookup :single_substitution, "Pipe operator" do
     substitutions do
       substitute ?<, "less.pipeoperator"

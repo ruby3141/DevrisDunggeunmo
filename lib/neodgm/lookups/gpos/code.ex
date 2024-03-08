@@ -12,7 +12,7 @@ lookups NeoDGM.Lookups.GPOS.Code, for: "GPOS" do
   end
 
   lookup :single_adjustment, "Move 1px backward" do
-    adjust_uniform @chars ++ ~w(colon.eq equal.2px), x_placement: -1
+    adjust_uniform @chars ++ ~w(colon.eq equal.2px greater.markuptag), x_placement: -1
   end
 
   lookup :single_adjustment, "Move 2px backward" do
@@ -57,6 +57,21 @@ lookups NeoDGM.Lookups.GPOS.Code, for: "GPOS" do
     context do
       input ~w(hyphen.markupcomment), apply: "Move 2px backward"
       lookahead ~w(hyphen.markupcomment)
+    end
+  end
+
+  lookup :chained_context, "Markup tag" do
+    feature "calt", scripts()
+
+    context do
+      input ~w(less.markuptag), apply: "Move 1px forward"
+      lookahead ~w(slash.markuptag)
+      lookahead ~w(greater.markuptag)
+    end
+
+    context do
+      input ~w(slash.markuptag), apply: "Move 1px forward"
+      input ~w(greater.markuptag), apply: "Move 1px backward"
     end
   end
 end
