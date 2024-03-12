@@ -14,21 +14,18 @@ lookups NeoDGM.Lookups.GSUB.Code.Substitutions, for: "GSUB" do
     end
   end
 
-  lookup :single_substitution, "Markup comment exclam" do
+  lookup :single_substitution, "Markup comment" do
     substitutions do
       substitute ?!, "exclam.markupcomment"
+      substitute ?-, "hyphen.markupcomment"
     end
   end
 
-  lookup :single_substitution, "Markup comment hyphen body" do
+  lookup :single_substitution, "Markup tag" do
     substitutions do
-      substitute ?-, "hyphen.markupcomment.body"
-    end
-  end
-
-  lookup :single_substitution, "Markup comment hyphen tail" do
-    substitutions do
-      substitute ?-, "hyphen.markupcomment.tail"
+      substitute ?<, "less.markuptag"
+      substitute ?/, "slash.markuptag"
+      substitute ?>, "greater.markuptag"
     end
   end
 
