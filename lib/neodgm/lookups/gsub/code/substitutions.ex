@@ -1,58 +1,31 @@
 use PixelFont.OTFLayout
 
 lookups NeoDGM.Lookups.GSUB.Code.Substitutions, for: "GSUB" do
-  lookup :single_substitution, "Short bidirectional arrow body" do
+  lookup :single_substitution, "Arrow body" do
     substitutions do
-      substitute ?-, "hyphen.bidiarr.short"
-      substitute ?=, "equal.bidiarr.short"
+      substitute ?-, "hyphen.arrow"
+      substitute ?=, "equal.arrow"
     end
   end
 
-  lookup :single_substitution, "Bidirectional arrow joiner" do
+  lookup :single_substitution, "Greater, 1px backward" do
     substitutions do
-      substitute ?-, "hyphen.bidiarr.joiner"
-      substitute ?=, "equal.bidiarr.joiner"
+      substitute ?>, "greater.left1px"
     end
   end
 
-  lookup :single_substitution, "Left arrow head" do
-    substitutions do
-      substitute ?-, "hyphen.larr.head"
-      substitute ?=, "equal.larr.head"
-    end
-  end
-
-  lookup :single_substitution, "Left arrow body" do
-    substitutions do
-      substitute ?-, "hyphen.larr.body"
-      substitute ?=, "equal.larr.body"
-    end
-  end
-
-  lookup :single_substitution, "Right arrow head" do
-    substitutions do
-      substitute ?-, "hyphen.rarr.head"
-      substitute ?=, "equal.rarr.head"
-    end
-  end
-
-  lookup :single_substitution, "Right arrow head alt" do
-    substitutions do
-      substitute ?-, "hyphen.rarr.head2"
-      substitute ?=, "equal.rarr.head2"
-    end
-  end
-
-  lookup :single_substitution, "Right arrow body" do
-    substitutions do
-      substitute ?-, "hyphen.rarr.body"
-      substitute ?=, "equal.rarr.body"
-    end
-  end
-
-  lookup :single_substitution, "Markup comment exclam" do
+  lookup :single_substitution, "Markup comment" do
     substitutions do
       substitute ?!, "exclam.markupcomment"
+      substitute ?-, "hyphen.markupcomment"
+    end
+  end
+
+  lookup :single_substitution, "Markup tag" do
+    substitutions do
+      substitute ?<, "less.markuptag"
+      substitute ?/, "slash.markuptag"
+      substitute ?>, "greater.markuptag"
     end
   end
 

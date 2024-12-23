@@ -2,19 +2,22 @@ use PixelFont.NameTable
 
 ver = Version.parse!(Mix.Project.config()[:version])
 patch_str = ver.patch |> to_string() |> String.pad_leading(2, "0")
-version_str = "Version #{ver.major}.#{ver.minor}#{patch_str}"
+version_str = "#{ver.pre}, based on NeoDunggeunmo #{ver.major}.#{ver.minor}#{patch_str}"
 
 copyright_en = """
 Original font was released under the public domain by Jungtae Kim \
 in 1990s. \
 Conversion and additional character design by Dalgona. \
-<me@dalgona.dev>\
+<me@dalgona.dev> \
+Customized code ligatures by CDnX. \
+<ruby3141@gmail.com>\
 """
 
 copyright_ko = """
 원본 글꼴은 1990년대에 김중태 한글문화원 원장에 의해 퍼블릭 \
 도메인으로 공개되었습니다. \
-변환 및 추가적인 문자 디자인: Dalgona. <me@dalgona.dev>\
+변환 및 추가적인 문자 디자인: Dalgona. <me@dalgona.dev> \
+코드 ligature 수정: CDnX. <ruby3141@gmail.com>\
 """
 
 license_en = """
@@ -27,51 +30,26 @@ license_ko = """
 사용, 연구, 수정, 임베드 및 재배포될 수 있습니다.\
 """
 
-name_table NeoDGM.NameTable do
-  name_records language: "en-US" do
-    copyright copyright_en
-    family "NeoDunggeunmo"
-    subfamily "Regular"
-    unique_id "Dalgona : NeoDunggeunmo : 2019"
-    full_name "NeoDunggeunmo"
-    version version_str
-    postscript_name "NeoDunggeunmo-Regular"
-    license license_en
-    license_url "https://scripts.sil.org/OFL"
-  end
-
-  name_records language: "ko-KR" do
-    copyright copyright_ko
-    family "Neo둥근모"
-    subfamily "보통"
-    full_name "Neo둥근모"
-    version version_str
-    postscript_name "NeoDunggeunmo-Regular"
-    license license_ko
-    license_url "https://scripts.sil.org/OFL"
-  end
-end
-
 name_table NeoDGM.NameTable.Code do
   name_records language: "en-US" do
     copyright copyright_en
-    family "NeoDunggeunmo Code"
+    family "DevrisDunggeunmo"
     subfamily "Regular"
-    unique_id "Dalgona : NeoDunggeunmo Code : 2019"
-    full_name "NeoDunggeunmo Code"
+    unique_id "CDnX : DevrisDunggeunmo : 2024"
+    full_name "DevrisDunggeunmo"
     version version_str
-    postscript_name "NeoDunggeunmoCode-Regular"
+    postscript_name "DevrisDunggeunmo"
     license license_en
     license_url "https://scripts.sil.org/OFL"
   end
 
   name_records language: "ko-KR" do
     copyright copyright_ko
-    family "Neo둥근모 Code"
+    family "Devris둥근모"
     subfamily "보통"
-    full_name "Neo둥근모 Code"
+    full_name "Devris둥근모"
     version version_str
-    postscript_name "NeoDunggeunmoCode-Regular"
+    postscript_name "DevrisDunggeunmo"
     license license_ko
     license_url "https://scripts.sil.org/OFL"
   end
