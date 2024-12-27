@@ -36,5 +36,5 @@ WIP. Coming Soon™
 
 1. 현재 작업 디렉토리에 `DevrisDunggeunmo.ttf` 파일이 생성됩니다.
 
-1. ffpython, 혹은 fontforge 라이브러리가 설치된 python 환경에서 `fontforge.py`를 실행합니다.
+1. ffpython, 혹은 fontforge 라이브러리가 설치된 python 환경에서 `postbuild.py`를 실행합니다.
    Bitmap glyph, 가짜 Bold/Italic TTF 파일과 TTC 컬렉션 파일, woff/woff2 압축된 폰트 파일을 생성하는 스크립트입니다.
