@@ -1,5 +1,6 @@
 # Files generated during font build process
 *.ttf
+*.ttc
 *.woff
 *.woff2
 

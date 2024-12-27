@@ -36,3 +36,6 @@ WIP. Coming Soon™
     It would fail to build without code ligature, as the corresponding nametable got removed.
 
 1. A file named `DevrisDunggeunmo.ttf` will be created in your PWD.
+
+2. run `fontforge.py` on ffpython, or python runtime with fontforge library installed.
+   It generates bitmap glyphs, fake Bold/Italic TTF files, TTC collection file, and woff/woff2 compressed font files.
