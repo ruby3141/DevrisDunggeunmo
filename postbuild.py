@@ -4,11 +4,18 @@ font = fontforge.open("DevrisDunggeunmo.ttf")
 s = font.selection.all()
 # Normal integer tuple doesn't work for fontforge. IDK why.
 # https://github.com/fontforge/fontforge/issues/5029
-font.bitmapSizes = ((16,), (32,), (48,))
+# font.bitmapSizes = ((16,), (32,), (48,))
 # regenBitmap is even weirder. Documentation said it takes TUPLE but you can only toss single integer in it.
+# font.regenBitmaps((16,))
+# font.regenBitmaps((32,))
+# font.regenBitmaps((48,))
+
+# There are issue with 32px and 48px bitmap glyph.
+# Until finding why, only 16px will be included and shipped.
+# See https://github.com/ruby3141/DevrisDunggeunmo/issues/8 for detail.
+font.bitmapSizes = ((16,),)
 font.regenBitmaps((16,))
-font.regenBitmaps((32,))
-font.regenBitmaps((48,))
+
 font.appendSFNTName("Korean", "SubFamily", "보통")
 font.appendSFNTName("English (US)", "SubFamily", "Regular")
 font.appendSFNTName("Korean", "Fullname", "Devris둥근모")
