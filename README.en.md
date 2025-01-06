@@ -37,5 +37,8 @@ WIP. Coming Soon™
 
 1. A file named `DevrisDunggeunmo.ttf` will be created in your PWD.
 
-2. run `postbuild.py` on ffpython, or python runtime with fontforge library installed.
-   It generates bitmap glyphs, fake Bold/Italic TTF files, TTC collection file, and woff/woff2 compressed font files.
+1. run `postbuild.py` on ffpython, or python runtime with fontforge library installed.
+   It generates bitmap glyphs.
+
+1. run `postbuild2.py` on python runtime with fontTools library installed.
+   It generates fake Bold/Italic TTF files, TTC collection file, and woff/woff2 compressed font files.

@@ -47,6 +47,7 @@ name_table NeoDGM.NameTable.Code do
     copyright copyright_ko
     family "Devris둥근모"
     subfamily "보통"
+    unique_id "CDnX : DevrisDunggeunmo : 2024"
     full_name "Devris둥근모"
     version version_str
     postscript_name "DevrisDunggeunmo"
